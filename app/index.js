@@ -6,12 +6,13 @@ import WelcomeImage from './assets/images/welcome.png'
 import { useFonts } from "expo-font"
 import { useRouter } from "expo-router";
 import * as SplashScreen from 'expo-splash-screen';
+import { NextPageButton } from './components/Buttons';
 
 export default function Page() {
   const router = useRouter();
   const [fontsLoaded] = useFonts({
-    'FiraCode-Bold': require('./assets/fonts/FiraCode-Bold.ttf'),
-    'FiraCode-Regular': require('./assets/fonts/FiraCode-Regular.ttf'),
+    'Poppins-Bold': require('./assets/fonts/Poppins-Bold.ttf'),
+    'Poppins-Regular': require('./assets/fonts/Poppins-Regular.ttf'),
   });
 
   const onLayoutRootView = useCallback(async () => {
@@ -25,17 +26,12 @@ export default function Page() {
   }
 
   return (
-    <SafeAreaView className="bg-[#2AAD7A] flex-1 items-center">
-      <Image className="w-full mt-16" source={WelcomeImage}/>
-      <View className="px-6 mt-6">
-        <Text className="text-4xl text-white font-firaregular">Seja</Text>
-        <Text className="text-5xl leading-[62px] text-white font-firaregular">Bem-vindo</Text>
-        <Text className="text-base text-white font-firaregular">FitSync é um app que irá te ajudar a criar e organizar os seus treinos de forma intuitiva.</Text>
-      </View>
-      <View className="flex-1 justify-center">
-        <TouchableOpacity className="bg-white rounded-3xl p-6" onPress={() => router.push("/createnickname")}>
-          <AntDesign name="arrowright" size={24} color="black" />
-        </TouchableOpacity>
+    <SafeAreaView className="flex-1 items-center justify-center space-y-6">
+      <Text className="font-poppins_bold text-4xl w-80 leading-[50px]">Bora dar os primeiros passos?</Text>
+      <Image className="w-full" source={WelcomeImage}/>
+      <Text className="text-xl text-gray-400 font-poppins_regular px-8 text-justify">FitSync é um app que irá te ajudar a criar e organizar os seus treinos de forma intuitiva.</Text>
+      <View>
+        <NextPageButton text="Começar" router="/createnickname"/>
       </View>
     </SafeAreaView>
   );

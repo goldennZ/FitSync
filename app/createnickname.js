@@ -1,17 +1,26 @@
-import { Link, useRouter } from "expo-router";
-import { Text, TextInput, TouchableOpacity, View } from "react-native";
+import { Text, View } from "react-native";
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { AntDesign } from '@expo/vector-icons';
+import { NextPageButton } from "./components/Buttons";
+import { NormalInput } from "./components/Inputs";
+import { useEffect, useState } from "react";
 
 export default function Home() {
-  const router = useRouter();
+  const [name, setName] = useState("");
+  const [disabled, setDisabled] = useState(true);
+
+  useEffect(() => {
+    name.length <= 0
+    ? setDisabled(true)
+    : setDisabled(false)
+  },[name])
+
   return (
-    <SafeAreaView className="flex-1 justify-center items-center px-6 space-y-10">
-        <Text className="font-firabold text-5xl leading-[68px]">Nos diga o seu nome</Text>
-        <TextInput placeholder="Nickname" className="h-10 w-full rounded-2xl pl-4 bg-[#2AAD7A] font-firaregular text-xl text-center text-white"/>
-          <TouchableOpacity className="bg-black  rounded-3xl p-6" onPress={() => router.push("/menu/teladeinicio")}>
-            <AntDesign name="arrowright" size={24} color="white" />
-          </TouchableOpacity>
+    <SafeAreaView className="flex-1 items-center px-6 py-10 relative">
+        <Text className="font-poppins_bold text-4xl leading-[60px] mb-10 w-full px-6">Como podemos te chamar a partir de agora?</Text>
+        <NormalInput placeholder="Digite o seu nome" value={name} onChangeText={(text) => setName(text)}/>
+        <View className="absolute bottom-16 left-auto right-auto">
+          <NextPageButton text="Estou pronto" router="/menu/activity" disabled={disabled}/>
+        </View>
     </SafeAreaView>
   );
 }

@@ -4,8 +4,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'firabold': ['FiraCode-Bold'],
-        'firaregular': ['FiraCode-Regular']
+        'poppins_bold': ['Poppins-Bold'],
+        'poppins_regular': ['Poppins-Regular']
       }
     },
   },

@@ -1,27 +1,41 @@
 import { Tabs } from "expo-router";
-import Ionicons from '@expo/vector-icons/Ionicons';
+import Feather from '@expo/vector-icons/Feather';
 
 export default function AppLayout() {
+  const focusedColor = "#0DD196"
   return (
     <Tabs>
       <Tabs.Screen
-        name="teladeinicio"
+        name="activity"
         options={{
-          tabBarLabel: "Home",
+          tabBarLabel: "Atividades",
           headerShown: false,
           tabBarIcon: ({focused, color, size}) => {
-            return <Ionicons name="home" size={size} color={color} />;
-          }
+            return <Feather name="activity" size={size} color={focused ? focusedColor : color} />;
+          },
+          tabBarActiveTintColor: focusedColor
         }}
       />
       <Tabs.Screen
-        name="settings"
+        name="createActivity"
         options={{
-          tabBarLabel: "Settings",
+          tabBarLabel: "Criar",
           headerShown: false,
           tabBarIcon: ({focused, color, size}) => {
-            return <Ionicons name="md-settings-outline" size={size} color={color} />;
-          }
+            return <Feather name="plus-circle" size={size} color={focused ? focusedColor : color} />;
+          },
+          tabBarActiveTintColor: focusedColor
+        }}
+      />
+      <Tabs.Screen
+        name="perfil"
+        options={{
+          tabBarLabel: "Perfil",
+          headerShown: false,
+          tabBarIcon: ({focused, color, size}) => {
+            return <Feather name="smile" size={size} color={focused ? focusedColor : color} />;
+          },
+          tabBarActiveTintColor: focusedColor
         }}
       />
     </Tabs>
