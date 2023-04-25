@@ -1,15 +1,25 @@
-# Expo Router Example
+![Github Image-FitSync](https://user-images.githubusercontent.com/83186674/234263200-2f8219c9-f9b2-41f3-bec1-b89c03756722.png)
 
-Use [`expo-router`](https://expo.github.io/router) to build native navigation using files in the `app/` directory.
+# Aplicativo para organizar o seus exercícios físicos
 
-## 🚀 How to use
+## Links Rápidos ↗️
 
-```sh
-npx create-react-native-app -t with-router
-```
+- [Documentação Principal | Notion 📋](https://universal-passbook-468.notion.site/FitSync-d6f1c9990d4548f4986adeb28b8ce496)
+- [Layout | Figma 🎨](https://www.figma.com/file/3KTMX2Rcj08LKLTajrJzCp/FitSync?node-id=4%3A15&t=iMrMC9DbnUh03ysn-1)
 
-## 📝 Notes
+## Tech Stack 💜
 
-- [Expo Router: Docs](https://expo.github.io/router)
-- [Expo Router: Repo](https://github.com/expo/router)
-- [Request for Comments](https://github.com/expo/router/discussions/1)
+A _stack_ foi escolhida visando a facilidade e agilidade de produção.
+
+**📱 Mobile:**
+
+- [Expo](https://github.com/expo)
+- [React Native](https://github.com/react-native)
+
+**🏧 Server:**
+- Neste momento não temos nenhum server, os dados serão armazenados no próprio dispositivo
+
+## Contribuidores 😎
+<a href="https://github.com/goldennZ/FitSync/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=goldennZ/FitSync" />
+</a>
